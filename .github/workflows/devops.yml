@@ -8,20 +8,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Code Checkout
-        run : echo "Code checked out"
+        uses: actions/checkout@v7
   build:
+    needs: code
     runs-on: ubuntu-latest
     steps:
       - name: Code Build
-        run: echo "Code Build done"
+        uses: actions/checkout@v7
   test:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Code Test
-        run : echo "Code Tested"
+        uses: actions/checkout@v7
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Code Deployed
-        run : echo "Code Deployment Done"
+        uses: actions/checkout@v7
 

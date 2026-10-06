@@ -1,0 +1,27 @@
+# Name of the Workflow
+name: CICD
+
+on : push
+
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Checkout
+        run : echo "Code checked out"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Build
+        run: echo "Code Build done"
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Test
+        run : echo "Code Tested"
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Deployed
+        run : echo "Code Deployment Done"
+
